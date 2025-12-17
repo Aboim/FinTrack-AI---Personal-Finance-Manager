@@ -13,10 +13,15 @@ export const getFinancialInsights = async (transactions: Transaction[]): Promise
   }));
 
   const prompt = `
-    Analyze these latest financial transactions and provide 3-4 concise, professional bullet points of advice or observations about the spending habits. 
-    Focus on areas of improvement, trends, or positive signs.
-    Transactions: ${JSON.stringify(summary)}
-    Keep the tone helpful and modern.
+    Analise estas transações financeiras recentes e forneça de 3 a 4 tópicos (bullet points) concisos e profissionais com conselhos ou observações sobre os hábitos de consumo.
+    
+    REGRAS IMPORTANTES:
+    1. A resposta DEVE ser em Português (Brasil).
+    2. Foque em áreas de melhoria, tendências de gastos ou sinais positivos de economia.
+    3. Seja direto e prático.
+    4. Mantenha um tom prestativo, moderno e motivador.
+
+    Transações: ${JSON.stringify(summary)}
   `;
 
   try {
@@ -24,9 +29,9 @@ export const getFinancialInsights = async (transactions: Transaction[]): Promise
       model: 'gemini-3-flash-preview',
       contents: prompt,
     });
-    return response.text || "No insights available at the moment.";
+    return response.text || "Não foi possível gerar insights no momento.";
   } catch (error) {
     console.error("Gemini Error:", error);
-    return "Could not generate AI insights. Check your API configuration.";
+    return "Erro ao gerar insights de IA. Verifique sua configuração de API ou conexão.";
   }
 };
