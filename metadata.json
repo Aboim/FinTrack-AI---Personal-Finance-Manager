@@ -1,0 +1,5 @@
+{
+  "name": "FinTrack AI - Personal Finance Manager",
+  "description": "A modern personal finance management tool that allows importing data via JSON, visualizes spending patterns with interactive charts, and provides AI-powered financial insights using Gemini.",
+  "requestFramePermissions": []
+}
