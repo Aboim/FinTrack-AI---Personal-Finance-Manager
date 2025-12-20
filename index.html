@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en" class="transition-colors duration-500">
+<html lang="en" class="dark transition-colors duration-500">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,11 +36,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-            -webkit-font-smoothing: antialiased;
-        }
-        .dark body {
             background-color: #0f172a;
+            -webkit-font-smoothing: antialiased;
         }
         
         /* Custom Scrollbar */
@@ -51,11 +48,8 @@
           background: transparent;
         }
         ::-webkit-scrollbar-thumb {
-          background: #e2e8f0;
-          border-radius: 10px;
-        }
-        .dark ::-webkit-scrollbar-thumb {
           background: #334155;
+          border-radius: 10px;
         }
 
         @keyframes slide-up {
@@ -67,20 +61,17 @@
         }
 
         .glass-panel {
-          background: rgba(255, 255, 255, 0.7);
+          background: rgba(30, 41, 59, 0.7);
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
         }
-        .dark .glass-panel {
-          background: rgba(30, 41, 59, 0.7);
-        }
 
         .card-shadow {
-          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
         }
         .card-hover:hover {
           transform: translateY(-2px);
-          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
         }
     </style>
 <script type="importmap">
@@ -96,7 +87,7 @@
 }
 </script>
 </head>
-<body>
+<body class="bg-slate-900">
     <div id="root"></div>
 </body>
 </html>

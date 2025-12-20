@@ -1,0 +1,7 @@
+
+{
+  "appId": "com.fintrack.ai",
+  "appName": "FinTrack AI",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

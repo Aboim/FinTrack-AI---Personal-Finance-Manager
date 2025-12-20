@@ -13,10 +13,12 @@ export interface Transaction {
   description: string;
 }
 
+// Fix for Recharts ChartDataInput compatibility: added index signature
 export interface CategorySummary {
   name: string;
   value: number;
   color: string;
+  [key: string]: any;
 }
 
 export interface FinancialStats {
