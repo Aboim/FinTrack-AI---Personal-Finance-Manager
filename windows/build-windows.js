@@ -25,7 +25,7 @@ try {
 try {
   console.log('Convertendo para executável Windows...');
   // Nota: No Windows/macOS local, isto funcionará sem wine.
-  execSync('npx electron-builder --win --portable', { stdio: 'inherit' });
+  execSync('npx electron-builder --win', { stdio: 'inherit' });
   console.log('--- Conversão concluída com sucesso! ---');
   console.log('O executável encontra-se na pasta "windows".');
 } catch (e) {
