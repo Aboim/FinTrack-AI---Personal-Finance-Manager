@@ -3,7 +3,7 @@ import { GoogleGenAI } from "@google/genai";
 import { Transaction } from "../types";
 
 export const getFinancialInsights = async (transactions: Transaction[]): Promise<string> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
   
   const summary = transactions.slice(0, 50).map(t => ({
     type: t.type,

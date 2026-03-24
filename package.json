@@ -1,13 +1,15 @@
-
 {
   "name": "fintrack-ai",
   "version": "1.0.0",
   "description": "Gestão de despesas pessoais com IA",
   "main": "main.js",
   "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "lint": "tsc --noEmit",
     "start": "electron .",
-    "build": "node build.js",
+    "build": "vite build",
     "dist": "electron-builder",
+    "build:windows": "node windows/build-windows.js",
     "cap:init": "npx cap init",
     "cap:add-android": "npx cap add android",
     "cap:sync": "npm run build && npx cap sync",
@@ -24,19 +26,29 @@
   "author": "FinTrack AI Team",
   "license": "ISC",
   "devDependencies": {
+    "@capacitor/cli": "^6.0.0",
     "electron": "^31.0.0",
-    "electron-builder": "^24.13.3",
-    "@capacitor/cli": "^6.0.0"
+    "electron-builder": "^24.13.3"
   },
   "dependencies": {
+    "@capacitor/android": "^6.0.0",
     "@capacitor/core": "^6.0.0",
-    "@capacitor/android": "^6.0.0"
+    "@google/genai": "^1.46.0",
+    "@heroicons/react": "^2.2.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "recharts": "^3.8.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.2"
   },
   "build": {
     "appId": "com.fintrack.ai",
     "productName": "FinTrack AI",
     "directories": {
-      "output": "dist_exe"
+      "output": "windows"
     },
     "win": {
       "target": [
@@ -44,8 +56,10 @@
       ]
     },
     "files": [
-      "**/*",
-      "!dist_exe/*"
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
     ],
     "asar": true
   }

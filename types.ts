@@ -26,4 +26,5 @@ export interface FinancialStats {
   totalExpenses: number;
   balance: number;
   expenseByCategory: CategorySummary[];
+  categoryBalances: { name: string; balance: number }[];
 }

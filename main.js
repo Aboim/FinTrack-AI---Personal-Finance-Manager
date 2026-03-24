@@ -17,7 +17,11 @@ function createWindow() {
   });
 
   win.setMenuBarVisibility(false);
-  win.loadFile('index.html');
+  if (app.isPackaged) {
+    win.loadFile(path.join(__dirname, 'dist/index.html'));
+  } else {
+    win.loadFile('index.html');
+  }
 }
 
 // Determina o caminho base: pasta do EXE ou pasta atual em dev
